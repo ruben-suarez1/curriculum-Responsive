@@ -27,9 +27,9 @@
   --font-semi-bold: 600;
 
   /*========== Margenes ==========*/
-  --mb-1: .5rem;
-  --mb-2: 1rem;
-  --mb-3: 1.5rem;
+  --mb-1: 1rem;
+  --mb-2: 1.5rem;
+  --mb-3: 1rem;
 
   /*========== z index ==========*/
   --z-tooltip: 10;
@@ -74,7 +74,7 @@ body.scale-cv{
   --h1-font-size: .938rem;
   --h2-font-size: .938rem;
   --h3-font-size: .875rem;
-  --normal-font-size: .813rem;
+  --normal-font-size: .713rem;
   --small-font-size: .75rem;
   --smaller-font-size: .688rem;
 }
@@ -105,7 +105,7 @@ body.scale-cv{
 }
 
 .scale-cv .section{
-  padding: 1.35rem 0 .80rem;
+  padding: .75rem 0 .80rem;
 }
 
 .scale-cv .section-title{
@@ -212,7 +212,7 @@ img{
 }
 /*========== CLASS CSS ==========*/
 .section{
-  padding: 1.5rem 0;
+  padding: .5rem 0;
 }
 
 .section-title{
@@ -235,7 +235,7 @@ img{
 
 .bd-grid{
   display: grid;
-  gap: 1.5rem;
+  gap: .5rem;
 }
 
 .l-header{
@@ -600,7 +600,7 @@ gap: 1rem;
   }
 
   .home__container{
-    gap: 1.5rem;
+    gap: .5rem;
   }
 
   .home__button-movil{

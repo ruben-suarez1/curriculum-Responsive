@@ -18,7 +18,7 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
+  --normal-font-size: 1rem;
   --small-font-size: .875rem;
   --smaller-font-size: .813rem;
 
@@ -348,7 +348,6 @@ img{
 
 .home__profession{
   font-size: var(--normal-font-size);
-  margin-bottom: var(--mb-1);
 }
 
 .home__address{
@@ -487,7 +486,6 @@ gap: 1rem;
 /*========== CERTIFICATES ==========*/
 .certificate__title{
   font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-1);
 }
 
 /*========== REFERENCES ==========*/
@@ -620,4 +618,18 @@ gap: 1rem;
     grid-template-columns: repeat(5, max-content);
     column-gap: 3.5rem;
   }
+}
+
+.textcopy {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.cuality {
+  margin: 0 auto;
+  margin-bottom: var(--mb-1);
+}
+
+.certificate__content {
+  margin-bottom: var(--mb-1);
 }

@@ -633,3 +633,7 @@ gap: 1rem;
 .certificate__content {
   margin-bottom: var(--mb-1);
 }
+
+.experience__decription {
+  margin-bottom: 14px;
+}

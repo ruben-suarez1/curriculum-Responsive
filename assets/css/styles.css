@@ -18,9 +18,9 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: 1rem;
-  --small-font-size: .875rem;
-  --smaller-font-size: .813rem;
+  --normal-font-size: .875rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
 
   /*========== Font weight ==========*/
   --font-medium: 500;
@@ -595,6 +595,7 @@ gap: 1rem;
   .section-title,
   .profile__description{
     text-align: initial;
+    margin-bottom: 1rem;
   }
 
   .home__container{

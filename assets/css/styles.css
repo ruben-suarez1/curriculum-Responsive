@@ -12,6 +12,8 @@
   --container-color: #FAFAFA;
   --container-color-alt: #e4e7e6;
   --body-color: #FCFCFC;
+  --accent-color: #4f46e5;
+  --accent-color-light: #eef0fd;
 
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
@@ -52,6 +54,8 @@ body.dark-theme{
   --container-color: #212121;
   --container-color-alt: #181616;
   --body-color: #2B2B2B;
+  --accent-color: #818cf8;
+  --accent-color-light: #2c2a4a;
 }
 
 /*========== Button Dark/Light ==========*/
@@ -110,6 +114,12 @@ body.scale-cv{
 
 .scale-cv .section-title{
   margin-bottom: .5rem;
+  padding-bottom: .15rem;
+}
+
+.scale-cv .section-title::after{
+  width: 22px;
+  height: 2px;
 }
 
 .scale-cv .resume__left,
@@ -128,6 +138,15 @@ body.scale-cv{
 
 .scale-cv .home__data{
   gap: .25rem;
+}
+
+.scale-cv .home__badges{
+  gap: .25rem;
+}
+
+.scale-cv .home__badge{
+  font-size: .563rem;
+  padding: .1rem .45rem;
 }
 
 .scale-cv .home__address,
@@ -216,6 +235,7 @@ img{
 }
 
 .section-title{
+  position: relative;
   font-size: var(--h2-font-size);
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
@@ -223,6 +243,19 @@ img{
   letter-spacing: .35rem;
   text-align: center;
   margin-bottom: var(--mb-3);
+  padding-bottom: .5rem;
+}
+
+.section-title::after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
 }
 
 /*========== LAYOUT ==========*/
@@ -303,7 +336,7 @@ img{
 }
 
 .nav__link:hover{
-  color: var(--title-color);
+  color: var(--accent-color);
 }
 
 .nav__icon{
@@ -317,7 +350,7 @@ img{
 
 /* Active menu link */
 .active-link{
-  color: var(--title-color);
+  color: var(--accent-color);
 }
 
 /*========== HOME ==========*/
@@ -360,6 +393,24 @@ img{
   font-size: var(--small-font-size);
 }
 
+.home__badges{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .4rem;
+}
+
+.home__badge{
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  color: var(--accent-color);
+  background-color: var(--accent-color-light);
+  border: 1px solid var(--accent-color);
+  border-radius: 1rem;
+  padding: .15rem .6rem;
+  white-space: nowrap;
+}
+
 .home__icon{
   font-size: 1.2rem;
   margin-right: .25rem;
@@ -377,8 +428,9 @@ img{
 }
 
 .home__button-movil:hover{
-  background-color: var(--text-color);
-  color: var(--container-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
 }
 /*========== SOCIAL ==========*/
 .social__container{
@@ -394,7 +446,7 @@ gap: 1rem;
 }
 
 .social__link:hover{
-  color: var(--title-color);
+  color: var(--accent-color);
 }
 
 .social__icon{
@@ -424,7 +476,7 @@ gap: 1rem;
   display: block;
   width: 16px;
   height: 16px;
-  background-color: var(--text-color-light);
+  background-color: var(--accent-color);
   border-radius: 50%;
   margin-top: .25rem;
 }
@@ -479,7 +531,7 @@ gap: 1rem;
   display: inline-block;
   width: 5px;
   height: 5px;
-  background-color: var(--text-color);
+  background-color: var(--accent-color);
   border-radius: 50%;
   margin-right: .75rem;
 }
@@ -531,7 +583,7 @@ gap: 1rem;
   justify-content: center;
   align-items: center;
   padding: .3rem;
-  background-color: var(--container-color-alt);
+  background-color: var(--accent-color);
   border-radius: .4rem;
   z-index: var(--z-tooltip);
   transition: .4s;
@@ -540,7 +592,7 @@ gap: 1rem;
 
 .scrolltop__icon{
   font-size: 1.2rem;
-  color: var(--text-color);
+  color: #fff;
 }
 
 .show-scroll{

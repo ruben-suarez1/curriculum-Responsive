@@ -5,13 +5,12 @@ El repositorio ofrece dos versiones sincronizadas del CV:
 - `index.html`: CV visual y de marca personal, con diseño responsive y selector de tema.
 - `cv-ats.html`: CV ATS de una sola columna, preparado para lectura automática y exportación con texto seleccionable.
 
-## Guardar el CV como PDF
+## Opciones del CV
 
-1. Abrí `cv-ats.html` desde el enlace **Versión ATS / Guardar como PDF** del CV visual.
-2. Seleccioná **Imprimir / Guardar como PDF**.
-3. En el diálogo nativo del navegador, elegí **Guardar como PDF**.
+- **Descargar PDF visual** genera bajo demanda una copia orientada a presentación. Conserva el diseño visual, pero rasteriza el contenido y no se presenta como compatible con ATS.
+- **Abrir versión ATS** abre `cv-ats.html`, que usa la impresión nativa del navegador para guardar un PDF con texto seleccionable.
 
-Este flujo usa la impresión nativa del navegador. No se mantiene un PDF binario en el repositorio ni se rasteriza el contenido con JavaScript.
+No se mantiene un PDF binario pregenerado en el repositorio.
 
 ## Tecnologías
 

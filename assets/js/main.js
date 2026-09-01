@@ -91,3 +91,63 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
+/*==================== GENERATE VISUAL PDF ====================*/
+const areaCv = document.getElementById('area-cv')
+const resumeButton = document.getElementById('resume-button')
+let html2PdfLoadPromise
+
+const loadHtml2Pdf = () => {
+    if (window.html2pdf) return Promise.resolve()
+    if (html2PdfLoadPromise) return html2PdfLoadPromise
+
+    html2PdfLoadPromise = new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = 'assets/js/html2pdf.bundle.min.js'
+        script.onload = () => {
+            if (window.html2pdf) {
+                resolve()
+            } else {
+                script.remove()
+                html2PdfLoadPromise = undefined
+                reject(new Error('html2pdf no está disponible'))
+            }
+        }
+        script.onerror = () => {
+            script.remove()
+            html2PdfLoadPromise = undefined
+            reject(new Error('No se pudo cargar html2pdf'))
+        }
+        document.head.appendChild(script)
+    })
+
+    return html2PdfLoadPromise
+}
+
+const pdfOptions = {
+    margin: 0,
+    filename: 'RubenSuarez-CV.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 4 },
+    jsPDF: { format: 'legal', orientation: 'portrait' },
+    pagebreak: { mode: 'avoid-all' }
+}
+
+resumeButton.addEventListener('click', async () => {
+    if (resumeButton.disabled) return
+
+    resumeButton.disabled = true
+    resumeButton.setAttribute('aria-busy', 'true')
+
+    try {
+        await loadHtml2Pdf()
+        document.body.classList.add('scale-cv')
+        await window.html2pdf().set(pdfOptions).from(areaCv).save()
+    } catch (error) {
+        console.error('No se pudo generar el PDF visual.', error)
+    } finally {
+        document.body.classList.remove('scale-cv')
+        resumeButton.disabled = false
+        resumeButton.removeAttribute('aria-busy')
+    }
+})
+

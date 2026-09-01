@@ -80,7 +80,7 @@
     </header>
 
     <main class="l-main bd-container">
-        <div class="resume">
+        <div class="resume" id="area-cv">
             <div class="resume__left">
                 <!--========== HOME ==========-->
                 <section class="home" id="home">
@@ -98,9 +98,15 @@
                                 <span class="home__badge">AI-Driven Engineering</span>
                             </div>
 
-                            <div class="home__ats">
-                                <a href="cv-ats.html" class="home__ats-button">Versión ATS / Guardar como PDF</a>
-                                <p class="home__ats-help">Usá Imprimir &gt; Guardar como PDF para conservar el texto seleccionable.</p>
+                            <div class="home__actions" aria-label="Opciones del CV">
+                                <button class="home__action home__action--pdf" id="resume-button" type="button"
+                                    aria-label="Descargar PDF visual" title="Descargar PDF visual">
+                                    <i class='bx bx-download' aria-hidden="true"></i>
+                                </button>
+                                <a class="home__action home__action--ats" href="cv-ats.html"
+                                    aria-label="Abrir versión ATS" title="Abrir versión ATS">
+                                    <i class='bx bx-file-blank' aria-hidden="true"></i>
+                                </a>
                             </div>
                         </div>
 

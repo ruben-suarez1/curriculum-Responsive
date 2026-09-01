@@ -1,8 +1,20 @@
+# Curriculum responsive
 
-Portafolio Personal:
+El repositorio ofrece dos versiones sincronizadas del CV:
 
-* Html
-* Css
-* JavaScript
+- `index.html`: CV visual y de marca personal, con diseño responsive y selector de tema.
+- `cv-ats.html`: CV ATS de una sola columna, preparado para lectura automática y exportación con texto seleccionable.
 
-![localhost_5173_ (2)](https://github.com/ruben-suarez1/curriculum-Responsive/assets/84733911/732cdf67-c7c3-4847-b404-e168cfc1eabe)
+## Guardar el CV como PDF
+
+1. Abrí `cv-ats.html` desde el enlace **Versión ATS / Guardar como PDF** del CV visual.
+2. Seleccioná **Imprimir / Guardar como PDF**.
+3. En el diálogo nativo del navegador, elegí **Guardar como PDF**.
+
+Este flujo usa la impresión nativa del navegador. No se mantiene un PDF binario en el repositorio ni se rasteriza el contenido con JavaScript.
+
+## Tecnologías
+
+- HTML
+- CSS
+- JavaScript

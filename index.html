@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV de Rubén Darío Suárez, eCommerce Tech Lead especializado en VTEX IO, Shopify y frontend.">
+    <link rel="canonical" href="https://ruben-suarez.vercel.app">
 
     <!--========== BOX ICONS ==========-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -70,15 +72,15 @@
                 </ul>
             </div>
 
-            <div class="nav__toggle" id="nav-toggle">
-                <i class='bx bx-grid-alt'></i>
-            </div>
+            <button class="nav__toggle" id="nav-toggle" type="button" aria-label="Abrir menú"
+                aria-expanded="false" aria-controls="nav-menu">
+                <i class='bx bx-grid-alt' aria-hidden="true"></i>
+            </button>
         </nav>
     </header>
 
     <main class="l-main bd-container">
-        <!-- All elements within this div, is generated in PDF -->
-        <div class="resume" id="area-cv">
+        <div class="resume">
             <div class="resume__left">
                 <!--========== HOME ==========-->
                 <section class="home" id="home">
@@ -96,26 +98,24 @@
                                 <span class="home__badge">AI-Driven Engineering</span>
                             </div>
 
-                            <!-- Button to generate and download the pdf. Available for desktop. -->
-                            <div>
-                                <a download="" href="assets/pdf/ResumeCv.pdf" class="home__button-movil">Download</a>
+                            <div class="home__ats">
+                                <a href="cv-ats.html" class="home__ats-button">Versión ATS / Guardar como PDF</a>
+                                <p class="home__ats-help">Usá Imprimir &gt; Guardar como PDF para conservar el texto seleccionable.</p>
                             </div>
                         </div>
 
-                        <div class="home__addres bd-grid">
-                            <span class="home__information">
-                                <i class='bx bx-envelope home__icon'></i> rubensuarez199755@gmail.com
-                            </span>
-                            <span class="home__information">
-                                <i class='bx bx-phone home__icon'></i>312-202-2367
-                            </span>
+                        <div class="home__address bd-grid">
+                            <a class="home__information" href="mailto:rubensuarez199755@gmail.com">
+                                <i class='bx bx-envelope home__icon' aria-hidden="true"></i>rubensuarez199755@gmail.com
+                            </a>
+                            <a class="home__information" href="tel:312-202-2367">
+                                <i class='bx bx-phone home__icon' aria-hidden="true"></i>312-202-2367
+                            </a>
                         </div>
                     </div>
                     <!-- Theme change button -->
-                    <i class='bx bx-moon change-theme' title="Theme" id="theme-button"></i>
-
-                    <!-- Button to generate and download nthe pdf. Available for desktop-->
-                    <i class='bx bx-download generate-pdf' title="Generate PDF" id="resume-button"></i>
+                    <button class='bx bx-moon change-theme' type="button" aria-label="Cambiar tema de color"
+                        aria-pressed="false" id="theme-button"></button>
                 </section>
 
                 <!--========== SOCIAL ==========-->
@@ -123,15 +123,18 @@
                     <h2 class="section-title">SOCIAL</h2>
 
                     <div class="social__container bd-grid">
-                        <a href="https://www.linkedin.com/in/ruben-suarez1/" target="__blank" class="social__link">
+                        <a href="https://www.linkedin.com/in/ruben-suarez1/" target="_blank"
+                            rel="noopener noreferrer" class="social__link">
                             <i
                                 class='bx bxl-linkedin-square social__icon'></i>https://www.linkedin.com/in/ruben-suarez1/
                         </a>
-                        <a href="https://github.com/ruben-suarez1" target="__blank" class="social__link">
+                        <a href="https://github.com/ruben-suarez1" target="_blank" rel="noopener noreferrer"
+                            class="social__link">
                             <i class='bx bxl-github social__icon'></i>https://github.com/ruben-suarez1
                         </a>
-                        <a href="https://ruben-suarez.vercel.app/" target="__blank" class="social__link">
-                            <i class='bx bxs-briefcase-alt-2 social__icon'></i>https://ruben-suarez.com
+                        <a href="https://ruben-suarez.vercel.app" target="_blank" rel="noopener noreferrer"
+                            class="social__link">
+                            <i class='bx bxs-briefcase-alt-2 social__icon'></i>https://ruben-suarez.vercel.app
                         </a>
                     </div>
                 </section>
@@ -167,7 +170,7 @@
                             <div class="education__data bd-grid">
                                 <h3 class="education__title"> INGENIERO DE SISTEMAS</h3>
                                 <span class="education__studies">Universidad Piloto de Colombia</span>
-                                <span class="educatio__year">2015 - 2020</span>
+                                <span class="education__year">2015 - 2020</span>
                             </div>
                         </div>
                     </div>
@@ -218,14 +221,14 @@
                                 <span class="experience__line"></span>
                             </div>
 
-                            <div class="experience__data db-grid">
-                                <h3 class="experience__tittle">ECOMMERCE TECH LEAD</h3>
+                            <div class="experience__data bd-grid">
+                                <h3 class="experience__title">ECOMMERCE TECH LEAD</h3>
                                 <span class="experience__company">Mayo 2026 - Actualidad | Asylum Marketing</span>
                                 <br /><br />
-                                <p class="experience__decription">Dirijo el frente técnico de eCommerce de la agencia y al equipo de desarrollo, definiendo arquitecturas escalables sobre VTEX IO, Shopify y WooCommerce para marcas de retail y moda de LATAM.</p>
-                                <p class="experience__decription">Diseño e implemento integraciones en VTEX IO para sincronización con sistemas RMS/ERP, checkout y tracking de eventos, además de soluciones a medida en Shopify con secciones custom, metafields y Liquid OS 2.0.</p>
-                                <p class="experience__decription">Integro IA al flujo de trabajo mediante agentic coding, automatización de documentación y control de calidad técnico, agilizando las entregas sin comprometer calidad ni trazabilidad.</p>
-                                <p class="experience__decription">Impulso la evolución técnica del equipo mediante mentoría, estándares de desarrollo, documentación y componentes reutilizables.</p>
+                                <p class="experience__description">Dirijo el frente técnico de eCommerce de la agencia y al equipo de desarrollo, definiendo arquitecturas escalables sobre VTEX IO, Shopify y WooCommerce para marcas de retail y moda de LATAM.</p>
+                                <p class="experience__description">Diseño e implemento integraciones en VTEX IO para sincronización con sistemas RMS/ERP, checkout y tracking de eventos, además de soluciones a medida en Shopify con secciones custom, metafields y Liquid OS 2.0.</p>
+                                <p class="experience__description">Integro IA al flujo de trabajo mediante agentic coding, automatización de documentación y control de calidad técnico, agilizando las entregas sin comprometer calidad ni trazabilidad.</p>
+                                <p class="experience__description">Impulso la evolución técnica del equipo mediante mentoría, estándares de desarrollo, documentación y componentes reutilizables.</p>
                             </div>
                         </div>
 
@@ -235,13 +238,13 @@
                                 <span class="experience__line"></span>
                             </div>
 
-                            <div class="experience__data db-grid">
-                                <h3 class="experience__tittle">DEVELOPER</h3>
+                            <div class="experience__data bd-grid">
+                                <h3 class="experience__title">DEVELOPER</h3>
                                 <span class="experience__company">Enero 2025 - Mayo 2026 | Asylum Marketing</span>
                                 <br /><br />
-                                <p class="experience__decription">Desarrollé soluciones frontend con React, TypeScript y JavaScript, incorporando funcionalidades personalizadas en Shopify, VTEX IO y BigCommerce.</p>
-                                <p class="experience__decription">Optimicé la usabilidad y la velocidad de carga de tiendas eCommerce, logrando mejoras de rendimiento superiores al 30%.</p>
-                                <p class="experience__decription">Lideré integraciones con servicios externos (fulfillment, inventario, pagos y tracking), asegurando estabilidad y escalabilidad en entornos productivos.</p>
+                                <p class="experience__description">Desarrollé soluciones frontend con React, TypeScript y JavaScript, incorporando funcionalidades personalizadas en Shopify, VTEX IO y BigCommerce.</p>
+                                <p class="experience__description">Optimicé la usabilidad y la velocidad de carga de tiendas eCommerce, logrando mejoras de rendimiento superiores al 30%.</p>
+                                <p class="experience__description">Lideré integraciones con servicios externos (fulfillment, inventario, pagos y tracking), asegurando estabilidad y escalabilidad en entornos productivos.</p>
                             </div>
                         </div>
 
@@ -251,13 +254,13 @@
                                 <span class="experience__line"></span>
                             </div>
 
-                            <div class="experience__data db-grid">
-                                <h3 class="experience__tittle">DESARROLLADOR WEB</h3>
+                            <div class="experience__data bd-grid">
+                                <h3 class="experience__title">DESARROLLADOR WEB</h3>
                                 <span class="experience__company">Agosto 2022 - Enero 2025 | ITGlobers</span>
                                 <br /><br />
-                                <p class="experience__decription">Desarrollé interfaces dinámicas y responsivas con React y JavaScript para proyectos eCommerce sobre VTEX IO.</p>
-                                <p class="experience__decription">Mejoré el SEO y optimicé Core Web Vitals, reduciendo LCP e INP.</p>
-                                <p class="experience__decription">Coordiné tareas técnicas en equipos colaborativos bajo metodologías ágiles.</p>
+                                <p class="experience__description">Desarrollé interfaces dinámicas y responsivas con React y JavaScript para proyectos eCommerce sobre VTEX IO.</p>
+                                <p class="experience__description">Mejoré el SEO y optimicé Core Web Vitals, reduciendo LCP e INP.</p>
+                                <p class="experience__description">Coordiné tareas técnicas en equipos colaborativos bajo metodologías ágiles.</p>
                             </div>
                         </div>
 
@@ -266,11 +269,11 @@
                                 <span class="experience__rounder"></span>
                             </div>
 
-                            <div class="experience__data db-grid">
-                                <h3 class="experience__tittle">INGENIERO DE SISTEMAS</h3>
+                            <div class="experience__data bd-grid">
+                                <h3 class="experience__title">INGENIERO DE SISTEMAS</h3>
                                 <span class="experience__company">Octubre 2020 - Marzo 2021 | Alcaldía del Pital</span>
                                 <br /><br />
-                                <p class="experience__decription">Diseñé e implementé soluciones tecnológicas para procesos públicos, mejorando la eficiencia operativa y el soporte de sistemas.</p>
+                                <p class="experience__description">Diseñé e implementé soluciones tecnológicas para procesos públicos, mejorando la eficiencia operativa y el soporte de sistemas.</p>
                             </div>
                         </div>
                     </div>
@@ -280,7 +283,7 @@
                 <section class="certificate section" id="certificate">
                     <h2 class="section-title">CURSOS</h2>
 
-                    <div class="certificate___container bd-grid">
+                    <div class="certificate__container bd-grid">
 
                         <div class="certificate__content">
                             <h3 class="certificate__title">Universidad CSS - Aprende CSS desde Cero hasta Experto</h3>
@@ -328,7 +331,7 @@
                 </section> -->
 
                 <!--========== LANGUAGES ==========-->
-                <section class="languages section">
+                <section class="languages section" id="references">
                     <h2 class="section-title">LENGUAJES</h2>
 
                     <div class="languages__container">
@@ -380,12 +383,9 @@
     </main>
 
     <!--========== SCROLL TOP ==========-->
-    <a href="#" class="scrolltop" id="scroll-top">
-        <i class='bx bxs-up-arrow-alt scrolltop__icon'></i>
+    <a href="#" class="scrolltop" id="scroll-top" aria-label="Volver al inicio">
+        <i class='bx bxs-up-arrow-alt scrolltop__icon' aria-hidden="true"></i>
     </a>
-
-    <!--========== HTML2PDF ==========-->
-    <script src="assets/js/html2pdf.bundle.min.js"></script>
 
     <!--========== MAIN JS ==========-->
     <script src="assets/js/main.js"></script>

@@ -6,8 +6,9 @@ const showMenu = (toggleId, navId) =>{
     // Validate that variables exist
     if(toggle && nav){
         toggle.addEventListener('click', ()=>{
-            // We add the show-menu class to the div tag with the nav__menu class
-            nav.classList.toggle('show-menu')
+            const isOpen = nav.classList.toggle('show-menu')
+            toggle.setAttribute('aria-expanded', String(isOpen))
+            toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú')
         })
     }
 }
@@ -18,8 +19,11 @@ const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
+    const navToggle = document.getElementById('nav-toggle')
     // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
+    navToggle.setAttribute('aria-expanded', 'false')
+    navToggle.setAttribute('aria-label', 'Abrir menú')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
@@ -32,12 +36,15 @@ function scrollActive(){
     sections.forEach(current =>{
         const sectionHeight = current.offsetHeight
         const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
+        const sectionId = current.getAttribute('id')
+        const sectionLink = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        if (sectionLink) {
+            if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+                sectionLink.classList.add('active-link')
+            }else{
+                sectionLink.classList.remove('active-link')
+            }
         }
     })
 }
@@ -63,6 +70,7 @@ const selectedIcon = localStorage.getItem('selected-icon')
 // We obtain the current theme that the interface has by validating the dark-theme class
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun'
+const updateThemeState = () => themeButton.setAttribute('aria-pressed', String(getCurrentTheme() === 'dark'))
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
@@ -70,48 +78,16 @@ if (selectedTheme) {
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
   themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme)
 }
+updateThemeState()
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
     // Add or remove the dark / icon theme
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
+    updateThemeState()
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
-})
-
-/*==================== REDUCE THE SIZE AND PRINT ON AN A4 SHEET ====================*/ 
-function scaleCv(){
-    document.body.classList.add('scale-cv')
-}
-
-/*==================== REMOVE THE SIZE WHEN THE CV IS DOWNLOADED ====================*/ 
-function removeScale(){
-    document.body.classList.remove('scale-cv')
-}
-
-/*==================== GENERATE PDF ====================*/ 
-// PDF generated area
-let areaCv = document.getElementById('area-cv')
-
-let resumeButton = document.getElementById('resume-button')
-
-// Html2pdf options
-let opt = {
-    margin:       0,
-    filename:     'RubenSuarez-CV.pdf',
-    image:        { type: 'jpeg', quality: 0.98 },
-    html2canvas:  { scale: 4 },
-    jsPDF:        { format: 'legal', orientation: 'portrait' },
-    pagebreak:    { mode: 'avoid-all' }
-  }
-
-// When the button is clicked, scale → generate → restore
-resumeButton.addEventListener('click', () =>{
-    scaleCv()
-    html2pdf().set(opt).from(areaCv).save().then(() => {
-        removeScale()
-    })
 })
 

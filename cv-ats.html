@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Versión ATS del CV de Rubén Darío Suárez, eCommerce Tech Lead.">
+    <link rel="canonical" href="https://ruben-suarez.vercel.app/cv-ats.html">
     <title>Rubén Darío Suárez - CV (versión ATS)</title>
     <style>
         :root {
@@ -61,6 +63,31 @@
             margin: 0 0 .2rem;
         }
 
+        a {
+            color: inherit;
+        }
+
+        .print-actions {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid var(--line);
+            background: #f7f7f7;
+        }
+
+        .print-actions p {
+            margin-bottom: .75rem;
+        }
+
+        .print-button {
+            padding: .65rem 1rem;
+            border: 0;
+            color: #ffffff;
+            background: #111111;
+            font: inherit;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
         .job {
             margin-bottom: 1rem;
         }
@@ -89,6 +116,10 @@
         }
 
         @media print {
+            .print-actions {
+                display: none;
+            }
+
             body {
                 padding: 0;
                 max-width: 100%;
@@ -103,15 +134,20 @@
 
 <body>
 
+    <aside class="print-actions" aria-label="Opciones para guardar el CV">
+        <p><strong>Guardar como PDF:</strong> seleccioná Imprimir y luego Guardar como PDF. La impresión nativa conserva el texto seleccionable para sistemas ATS.</p>
+        <button class="print-button" id="print-cv" type="button">Imprimir / Guardar como PDF</button>
+    </aside>
+
     <header>
         <h1>Rubén Darío Suárez</h1>
         <p class="role">eCommerce Tech Lead | VTEX IO · Shopify</p>
         <p class="contact">
-            Email: rubensuarez199755@gmail.com &nbsp;|&nbsp;
-            Teléfono: 312-202-2367 &nbsp;|&nbsp;
-            LinkedIn: linkedin.com/in/ruben-suarez1 &nbsp;|&nbsp;
-            GitHub: github.com/ruben-suarez1 &nbsp;|&nbsp;
-            Portafolio: ruben-suarez.com
+            Email: <a href="mailto:rubensuarez199755@gmail.com">rubensuarez199755@gmail.com</a> &nbsp;|&nbsp;
+            Teléfono: <a href="tel:312-202-2367">312-202-2367</a> &nbsp;|&nbsp;
+            LinkedIn: <a href="https://www.linkedin.com/in/ruben-suarez1/">https://www.linkedin.com/in/ruben-suarez1/</a> &nbsp;|&nbsp;
+            GitHub: <a href="https://github.com/ruben-suarez1">https://github.com/ruben-suarez1</a> &nbsp;|&nbsp;
+            Portafolio: <a href="https://ruben-suarez.vercel.app">https://ruben-suarez.vercel.app</a>
         </p>
     </header>
 
@@ -182,7 +218,7 @@
     </section>
 
     <section>
-        <h2>Certificaciones</h2>
+        <h2>Cursos</h2>
         <ul>
             <li>Universidad CSS - Aprende CSS desde Cero hasta Experto</li>
             <li>Certificado de Iniciación al Desarrollo con IA</li>
@@ -195,6 +231,10 @@
         <h2>Idiomas</h2>
         <p>Español (nativo) &nbsp;|&nbsp; Inglés (B1)</p>
     </section>
+
+    <script>
+        document.getElementById('print-cv').addEventListener('click', () => window.print())
+    </script>
 
 </body>
 
